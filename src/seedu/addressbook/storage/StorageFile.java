@@ -40,6 +40,7 @@ public class StorageFile {
         public InvalidStorageFilePathException(String message) {
             super(message);
         }
+        // super() refers to constructor of IllegalValueException(?)
     }
 
     /**
@@ -52,6 +53,10 @@ public class StorageFile {
         }
     }
 
+    public static class StorageReadOnlyException extends StorageOperationException {
+        public StorageReadOnlyException(String message)  { super(message); }
+    }
+
     private final JAXBContext jaxbContext;
 
     public final Path path;
@@ -60,7 +65,7 @@ public class StorageFile {
      * @throws InvalidStorageFilePathException if the default path is invalid
      */
     public StorageFile() throws InvalidStorageFilePathException {
-        this(DEFAULT_STORAGE_FILEPATH);
+        this(DEFAULT_STORAGE_FILEPATH); // this calls StorageFile(String filePath)
     }
 
     /**
@@ -106,7 +111,7 @@ public class StorageFile {
             marshaller.marshal(toSave, fileWriter);
 
         } catch (IOException ioe) {
-            throw new StorageOperationException("Error writing to file: " + path);
+            throw new StorageReadOnlyException("Warning: Storage file is read only. Any changes will not be saved");
         } catch (JAXBException jaxbe) {
             throw new StorageOperationException("Error converting address book into storage format");
         }

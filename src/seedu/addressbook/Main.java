@@ -13,6 +13,7 @@ import seedu.addressbook.parser.Parser;
 import seedu.addressbook.storage.StorageFile;
 import seedu.addressbook.storage.StorageFile.InvalidStorageFilePathException;
 import seedu.addressbook.storage.StorageFile.StorageOperationException;
+import seedu.addressbook.storage.StorageFile.StorageReadOnlyException;
 import seedu.addressbook.ui.TextUi;
 
 
@@ -106,10 +107,13 @@ public class Main {
      * @return result of the command
      */
     private CommandResult executeCommand(Command command)  {
+        command.setData(addressBook, lastShownList);
+        CommandResult result = command.execute();
         try {
-            command.setData(addressBook, lastShownList);
-            CommandResult result = command.execute();
             storage.save(addressBook);
+            return result;
+        } catch (StorageReadOnlyException sroe) {
+            ui.showToUser(sroe.getMessage());
             return result;
         } catch (Exception e) {
             ui.showToUser(e.getMessage());
