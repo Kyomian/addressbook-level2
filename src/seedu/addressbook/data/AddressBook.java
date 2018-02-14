@@ -109,7 +109,7 @@ public class AddressBook {
 
     /**
      * Sorts persons from the address book,
-     * according to their names in alphabetical order
+     * according to their names in lexicographical order
      */
     public void sort() {
         allPersons.sort();
