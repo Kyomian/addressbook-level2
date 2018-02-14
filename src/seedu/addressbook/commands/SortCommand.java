@@ -10,7 +10,7 @@ public class SortCommand extends Command {
 
     public static final String COMMAND_WORD = "sort";
 
-    public static final String MESSAGE_USAGE = "Sorts address book according to person's name, in lexicographical order.\n"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Sorts address book according to person's name, in lexicographical order.\n"
             + "Example: " + COMMAND_WORD;
 
     public SortCommand() {}
