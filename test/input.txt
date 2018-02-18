@@ -148,6 +148,19 @@
   clear
   list
 
+
+##########################################################
+# test edit command
+##########################################################
+
+  # should add correctly
+  add Alex p/61234567 e/Alex@gmail.com pa/Singapore t/friends
+  add Bob p/62345678 e/Bob@gmail.com pa/England t/friends
+
+  # should edit correctly
+  edit 2 Bob p/62345678 e/Bob@gmail.com a/Singapore t/buddies
+  list
+
 ##########################################################
 # test exit command
 ##########################################################

@@ -25,6 +25,9 @@
 || viewall: Views the non-private details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX
 || Example: viewall 1
+|| edit: Edits the details of the person identified by the index number in the last shown person listing.
+|| Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
+|| Example: edit 2 John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
 || help: Shows program usage instructions.
 || Example: help
 || exit: Exits the program.
@@ -296,6 +299,21 @@
 || Enter command: || [Command entered:  list]
 || 
 || 0 persons listed!
+|| ===================================================
+|| Enter command: || [Command entered:  add Alex p/61234567 e/Alex@gmail.com pa/Singapore t/friends]
+|| New person added: Alex Phone: 61234567 Email: Alex@gmail.com Address: (private) Singapore Tags: [friends]
+|| ===================================================
+|| Enter command: || [Command entered:  add Bob p/62345678 e/Bob@gmail.com pa/England t/friends]
+|| New person added: Bob Phone: 62345678 Email: Bob@gmail.com Address: (private) England Tags: [friends]
+|| ===================================================
+|| Enter command: || [Command entered:  edit 2 Bob p/62345678 e/Bob@gmail.com a/Singapore t/buddies]
+|| Person edited: Bob Phone: 62345678 Email: Bob@gmail.com Address: Singapore Tags: [buddies]
+|| ===================================================
+|| Enter command: || [Command entered:  list]
+|| 	1. Alex Phone: 61234567 Email: Alex@gmail.com Tags: [friends]
+|| 	2. Bob Phone: 62345678 Email: Bob@gmail.com Address: Singapore Tags: [buddies]
+|| 
+|| 2 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book as requested ...
