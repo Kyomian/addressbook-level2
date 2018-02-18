@@ -102,7 +102,6 @@ public class AddressBook {
     /**
      * Edits a person in the address book.
      *
-     * @throws DuplicatePersonException if an equivalent person exists in the address book.
      */
     public void editPerson(int targetIndex, Person toEdit) {
         allPersons.edit(targetIndex, toEdit);
