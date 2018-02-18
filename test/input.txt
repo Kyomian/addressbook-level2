@@ -157,6 +157,10 @@
   add Alex p/61234567 e/Alex@gmail.com pa/Singapore t/friends
   add Bob p/62345678 e/Bob@gmail.com pa/England t/friends
 
+  # invalid
+  edit 1
+  edit 3 Alex p/61234567 e/Alex@gmail.com a/Singapore t/friends
+
   # should edit correctly
   edit 2 Bob p/62345678 e/Bob@gmail.com a/Singapore t/buddies
   list
