@@ -307,7 +307,7 @@
 || New person added: Bob Phone: 62345678 Email: Bob@gmail.com Address: (private) England Tags: [friends]
 || ===================================================
 || Enter command: || [Command entered:  edit 1]
-|| Invalid command format!
+|| Invalid command format! 
 || edit: Edits the details of the person identified by the index number in the last shown person listing.
 || Parameters: INDEX NAME [p]p/PHONE [p]e/EMAIL [p]a/ADDRESS  [t/TAG]...
 || Example: edit 2 John Doe p/98765432 e/johnd@gmail.com a/311, Clementi Ave 2, #02-25 t/friends t/owesMoney
